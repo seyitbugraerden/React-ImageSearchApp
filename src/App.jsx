@@ -47,12 +47,11 @@ function App() {
     });
   };
 
-  const handleImageClick = (event) => {
-    // Handle the image click event
-    // You can add logic here if needed
-    console.log("Image Clicked!");
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      searchImage();
+    }
   };
-
   return (
     <>
       <div className="header">
@@ -62,6 +61,7 @@ function App() {
             style={{ width: "20%" }}
             value={term}
             onChange={(e) => setTerm(e.target.value)}
+            onKeyPress={handleKeyPress}
           />
           <label htmlFor="username">Görselleri Bul</label>
           <Button onClick={searchImage} label="Ara" />
@@ -88,7 +88,6 @@ function App() {
                 alt={item.description}
                 preview
                 className="downloadable-image"
-                onImageClick={handleImageClick}
               />
               <i
                 className="bi bi-download download-button"
