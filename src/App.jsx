@@ -63,7 +63,7 @@ function App() {
             onChange={(e) => setTerm(e.target.value)}
             onKeyPress={handleKeyPress}
           />
-          <label htmlFor="username">Görselleri Bul</label>
+          <label htmlFor="username">Image Search</label>
           <Button onClick={searchImage} label="Ara" />
         </span>
       </div>
